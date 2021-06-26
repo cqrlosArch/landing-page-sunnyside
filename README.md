@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://recipe-page.cqrlosarch.vercel.app/">
+    <a href="https://landing-page-sunnyside-cqrlosarch.vercel.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://devchallenges.io/solutions/6oFB5CSJVGzlosBSF4a3">
+    <a href="https://www.frontendmentor.io/solutions/sunnyside-agency-landing-page-sass-pug-and-vanillajs-d2mqr1hyP">
       Solution
     </a>
     <span> | </span>
