@@ -35,6 +35,7 @@
 }
 .card {
   @include mx.point('md') {
+    max-height: 500px;
     &:nth-of-type(1) {
       grid-column: 2/3;
       grid-row: 1/2;
@@ -126,7 +127,7 @@
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, -20%);
+  transform: translate(-50%, -15%);
   text-align: center;
   width: 350px;
   @include mx.point('md') {
