@@ -39,7 +39,7 @@
 
 
 <p align="center">
-  <img src="screenshot.png">
+  <img src="screen.png">
 </p>
 
 ### Built With
