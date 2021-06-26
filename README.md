@@ -59,13 +59,16 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/cqrlosArch/recipe-page
+$ git clone https://github.com/cqrlosArch/landing-page-sunnyside
 
 # Install dependencies
 $ yarn install or npm install
 
 # Run the app
-$ yarn dev or npm run dev
+$ yarn start or npm run start
+
+# Build the app
+$ yarn build or npm run build
 ```
 
 ## Acknowledgements
