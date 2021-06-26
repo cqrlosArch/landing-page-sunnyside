@@ -1,0 +1,7 @@
+mixin testimony(img, text, name, job)
+  article.testimony
+    img(src=img, alt=name).testimony__img
+    p.testimony__text= text
+    .client
+      h3.client__name= name
+      p.client__job= job

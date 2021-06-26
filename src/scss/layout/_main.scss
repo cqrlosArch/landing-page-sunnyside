@@ -1,0 +1,204 @@
+@use '../abstracts/colors.scss' as c;
+@use '../abstracts/mixins.scss' as mx;
+
+.section {
+  &__title {
+    text-transform: uppercase;
+    font-family: 'Fraunces', sans-serif;
+    color: c.$gray;
+    font-weight: 900;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  &--services {
+    display: grid;
+    grid-template-columns: 100%;
+
+    @include mx.point('md') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &--testimonials {
+    text-align: center;
+    margin: 3rem 0;
+  }
+
+  &--gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include mx.point('md') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+.card {
+  @include mx.point('md') {
+    &:nth-of-type(1) {
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &--text {
+    padding: 1rem;
+    text-align: center;
+    @include mx.point('md') {
+      text-align: left;
+      padding: 3rem;
+    }
+  }
+
+  &__title,
+  &__link {
+    font-family: 'Fraunces', sans-serif;
+  }
+  &__title {
+    font-size: 2rem;
+    color: c.$cardTitle;
+    font-weight: 900;
+  }
+  &__text {
+    color: c.$cardText;
+    line-height: 1.5;
+    font-weight: 600;
+    @include mx.point('md') {
+      padding-right: 2.5rem;
+    }
+  }
+  &__link {
+    display: block;
+    font-size: 1.2rem;
+    position: relative;
+    text-transform: uppercase;
+    color: c.$cardTitle;
+    font-weight: 900;
+    text-decoration: none;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    @include mx.point('md') {
+      font-size: 1rem;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 170px;
+      height: 8px;
+      display: block;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, -10%);
+      z-index: -1;
+      filter: opacity(0.3);
+      border-radius: 20px;
+      @include mx.point('md') {
+        width: 150px;
+        left: 0;
+        transform: translate(-5%, -10%);
+      }
+    }
+  }
+
+  &__link--yellow::after {
+    background-color: c.$yellow;
+  }
+  &__link--red::after {
+    background-color: c.$red;
+  }
+
+  &__link:hover::after {
+    filter: opacity(1);
+  }
+
+  &--figure {
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.figure {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  text-align: center;
+  width: 350px;
+  @include mx.point('md') {
+    height: 200px;
+    transform: translate(-50%, 10%);
+  }
+
+  &__title {
+    font-family: 'Fraunces', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    @include mx.point('md') {
+      font-size: 1.5rem;
+    }
+  }
+  &__text {
+    line-height: 1.5;
+    @include mx.point('md') {
+      font-size: 0.8rem;
+    }
+  }
+  &--green {
+    color: c.$green;
+  }
+  &--blue {
+    color: c.$blue;
+  }
+}
+
+.list-testimonials {
+  display: grid;
+  grid-template-columns: 100%;
+  @include mx.point('md') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.testimony {
+  padding: 2rem;
+  &__img {
+    max-width: 100px;
+    border-radius: 50%;
+  }
+  &__text {
+    color: c.$textTestimony;
+    line-height: 1.8;
+    @include mx.point('md') {
+      font-size: 0.8rem;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+.client {
+  &__name {
+    font-family: 'Fraunces', sans-serif;
+    color: c.$cardTitle;
+    font-weight: 900;
+    font-size: 1.4rem;
+    @include mx.point('md') {
+      font-size: 1rem;
+    }
+  }
+  &__job {
+    color: c.$gray;
+    @include mx.point('md') {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.gallery__img {
+  width: 100%;
+  height: auto;
+}

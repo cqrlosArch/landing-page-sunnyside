@@ -1,0 +1,148 @@
+@use '../abstracts/colors.scss' as c;
+@use '../abstracts/mixins.scss' as mx;
+
+.header {
+  background: url('../assets/images/mobile/image-header.jpg') bottom no-repeat;
+  background-size: cover;
+  min-height: 540px;
+  text-align: center;
+  padding: 1.4rem;
+  position: relative;
+  @include mx.point('md') {
+    background: url('../assets/images/desktop/image-header.jpg') bottom
+      no-repeat;
+    background-size: cover;
+    min-height: 650px;
+  }
+
+  &__title {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    font-family: 'Fraunces', sans-serif;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: c.$white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+}
+
+.brand__logo {
+  @include mx.point('md') {
+    width: 150px;
+  }
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  @include mx.point('md') {
+    width: 100%;
+    align-items: center;
+  }
+}
+.toggle-menu {
+  cursor: pointer;
+  @include mx.point('md') {
+    display: none;
+  }
+}
+.main-menu {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  background-color: c.$white;
+  width: 85%;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+  @include mx.point('md') {
+    background-color: transparent;
+    opacity: 1;
+    visibility: visible;
+    position: static;
+    transform: translate(0, 0);
+    max-height: none;
+  }
+  &__list {
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    @include mx.point('md') {
+      flex-direction: row;
+      height: auto;
+      margin: 0;
+      justify-content: flex-end;
+    }
+  }
+  &__item {
+    cursor: pointer;
+    @include mx.point('md') {
+      margin-left: 2rem;
+      color: c.$white;
+    }
+    &--contact {
+      background-color: c.$yellow;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      color: #000;
+      @include mx.point('md') {
+        background-color: c.$white;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.3s ease-in-out;
+        &:hover {
+          background-color: rgba(c.$white, 0.3);
+          color: c.$white;
+        }
+      }
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: c.$link;
+    @include mx.point('md') {
+      color: c.$white;
+    }
+    &--contact {
+      color: inherit;
+      font-size: 0.8rem;
+      font-family: 700;
+      text-transform: uppercase;
+      font-family: 'Fraunces', sans-serif;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border-top: 25px solid transparent;
+    border-right: 25px solid c.$white;
+    border-bottom: 25px solid transparent;
+    transform: translateY(-50%);
+    @include mx.point('md') {
+      display: none;
+    }
+  }
+}
+
+.main-menu--active {
+  opacity: 1;
+  visibility: visible;
+  max-height: 100%;
+  overflow: visibility;
+  transition: all 0.5s ease;
+  will-change: transform;
+}
