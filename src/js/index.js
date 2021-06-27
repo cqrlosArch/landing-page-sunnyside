@@ -14,13 +14,8 @@ const handleToggleMenu = (e) => {
 const clearMenu = (e) => {
   e.preventDefault();
   e.stopPropagation();
-  const hasNot_some = ['main-menu__list', 'toggle-menu', 'main-menu__link'];
-  if (
-    mainMenu.classList.contains('main-menu--active') &&
-    !hasNot_some.some((className) => e.target.classList.contains(className))
-  ) {
+  !e.target.closest('.main-menu--active') &&
     mainMenu.classList.remove('main-menu--active');
-  }
 };
 
 toggleMenu.addEventListener('click', handleToggleMenu, false);
